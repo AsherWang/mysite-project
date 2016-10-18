@@ -1,0 +1,92 @@
+$bg-color: #fff;
+$font-color: #fff;
+
+$theme-color: #f36;
+$theme-color-blue: #6cf;
+
+@mixin user-select($type) {
+    -webkit-user-select: $type;
+    -moz-user-select: $type;
+    -ms-user-select: $type;
+    user-select: $type;
+}
+
+
+//布局参数
+
+$header-height: 80px;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    background: $bg-color;
+    color: $theme-color-blue;
+    text-align: center;
+}
+
+.wrapper {
+    width: 100%;
+    .header {
+        @include user-select(none);
+        z-index: 1;
+        border-bottom: 1px solid #ddd;
+        height: $header-height;
+        line-height: $header-height;
+        top: 0;
+        left: 0;
+        position: fixed;
+        color: $font-color;
+        width: 100%;
+        background: $theme-color-blue;
+    }
+    .content {
+        position: relative;
+        text-align: center;
+        margin-top: $header-height;
+        overflow: hidden;
+    }
+}
+
+.float-left {
+    position: relative;
+    float: left;
+}
+
+//基本的块元素
+.block {
+    @include user-select(none);
+    position: relative;
+    width: 33.33333%;
+    background: rgba(255, 251, 240, .2);
+    text-align: center;
+    font-size: 40px;
+    cursor: default;
+    padding:20px 10px;
+    box-sizing: border-box;
+}
+
+.block:before {
+    content: '';
+    left: 0;
+    top: 0;
+    position: absolute;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+}
+
+
+.demo-box {
+    float: left;
+    margin: 10px 20px 20px 0;
+    width: 130px;
+}
