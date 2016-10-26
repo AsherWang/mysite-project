@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: black;
+    font-size: 12px;
+    min-width: 1002px;
+}
+
+.header {
+    text-align: center;
+    height: 46px;
+    background: #fff url(http://pic.static.sdo.com/dn/dn_act/project/header/bg_r.jpg) repeat-x top;
+    ul {
+        background: url(http://static.sdg-china.com/dn/pic/dn_act/header/bg_con_1.jpg) no-repeat;
+        width: 1002px;
+        margin: 0 auto;
+        height: 100%;
+        li {
+            height: 100%;
+            width: 114px;
+            list-style: none;
+            float: left;
+            text-align: center;
+            //&:not(:first-child){
+            //    background:url(http://pic.static.sdo.com/dn/dn_act/project/header/line.jpg) no-repeat;
+            //}
+            background: url(http://pic.static.sdo.com/dn/dn_act/project/header/line.jpg) no-repeat;
+            &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                background-position: right;
+            }
+
+            &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+                background-position: left;
+            }
+            a {
+                text-align: center;
+                line-height: 46px;
+                color: #dbc09b;
+                &:link {
+                    text-decoration: none;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.content {
+    height: 1000px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    .gallery {
+        width: 100%;
+        margin: 0 auto;
+        background: lightslategrey;
+        height: 100%;
+        text-align: left;
+        .gallery-item {
+            overflow: hidden;
+            cursor: pointer;
+            //width: 630px;
+            height: 1000px;
+            position: relative;
+            float: left;
+            //border: 1px solid white;
+            &.static {
+                cursor: default;
+            }
+            img.normal {
+                position: relative;
+                z-index: 333;
+            }
+            .active_img {
+                position: relative;
+                height: 0;
+                overflow: visible;
+                display: none;
+                top: -1000px;
+            }
+            //&.active {
+            //    .active_img{
+            //        display: block;
+            //    }
+            //    img.normal{
+            //        display: none;
+            //    }
+            //}
+
+            .desc {
+                width: 80px;
+                text-align: left;
+                position: relative;
+                top: -270px;
+                padding-left: 10px;
+                img {
+                    width: 50px;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    height: 132px;
+    background: #000 url(http://pic.static.sdo.com/SDGCOPYRIGHT/black/bg_b.jpg) repeat-x left top;
+    display: flex;
+    .footer-block1 {
+        margin-left: 100px;
+        display: flex;
+        height: 100%;
+        padding-right: 20px;
+        text-align: center;
+        flex: none;
+        width: 233px;
+        background: url(http://pic.static.sdo.com/SDGCOPYRIGHT/black/slice_b.jpg) no-repeat right top;
+        a {
+            flex: 1;
+            margin-top: 30px;
+        }
+
+    }
+    .footer-block2 {
+        margin-left: 10px;
+        display: block;
+        height: 100%;
+        padding-right: 20px;
+        flex: 1;
+        line-height: 22px;
+        .links {
+            margin-top: 20px;
+            span {
+                color: #e5af20;
+            }
+            a {
+                text-align: center;
+                color: #e5af20;
+                &:link {
+                    text-decoration: none;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .links-gray {
+            color: #888;
+        }
+
+    }
+    .footer-block3 {
+        margin-left: 10px;
+        display: block;
+        height: 100%;
+        padding-right: 20px;
+        flex: 1;
+        line-height: 22px;
+        .links {
+            height:52px;
+            margin-top: 40px;
+            a {
+                float:left;
+                margin-left: 5px;
+            }
+        }
+ 
+    }
+}
