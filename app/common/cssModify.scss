@@ -1,9 +1,17 @@
 //调整markdown显示的样式,以及隐藏掉多说的一部分控件
-pre,pre code {
+code,pre,pre code {
     font: 12px Consolas,"Liberation Mono", Menlo, Courier, monospace;
 }
 pre{
     padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+code{
+    padding:5px;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
@@ -19,7 +27,7 @@ hr{
     border-bottom: none;
 }
 .markdown-body{
-    padding: 45px;
+    padding:10px 45px 45px 45px;
     word-wrap: break-word;
     line-height: 1.5;
     //background-color: #fff;

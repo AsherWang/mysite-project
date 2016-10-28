@@ -1,7 +1,7 @@
 extends ./layout.pug
 append configValues
     - duoshuoConfig={thread_key:"write2soul_001",title:"index of write2soul",url:"http://asherwang.github.io/"}
-    - blogConfig={markdownSrc:"./README.md"}
+    - blogConfig={markdownSrc:"./README.md",name:"README"}
     - commonDir="../common"
 block title
     title 关于
@@ -12,7 +12,7 @@ block content
     .body
         .blog-container
             .blog-title
-                .blog-title-text 这里是标题部分
+                .blog-title-text=blogConfig.name
             .blog-content#readme
                 #result.markdown-body
             .blog-comment

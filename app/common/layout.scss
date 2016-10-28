@@ -9,23 +9,92 @@ body {
 .header {
     width: 100%;
     background-color: #fff;
+    height: 70px;
+    overflow: visible;
     .content {
         width: 1180px;
         margin: 0 auto;
         height: 70px;
-        ul {
+        ul.header-menu {
+            padding-left: 0;
             list-style: none;
             height: 70px;
             li {
+                cursor: pointer;
+                position: relative;
                 width: 80px;
                 height: 70px;
                 line-height: 70px;
                 text-align: center;
-                cursor: pointer;
-                a:link,a:visited {
+                a, a:link, a:visited {
                     text-decoration: none;
-                    color:black;
+                    color: black;
+                    line-height: 70px;
+                    height: 70px;
                 }
+
+                .li-category {
+                    display: none;
+                    height: 0;
+                    ul {
+                        display: none;
+                        list-style: none;
+                        padding-left: 0;
+                        width: 80px;
+                        background-color: #fff;
+                        border-top: none;
+                        box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+                        li {
+                            height: 40px;
+                            line-height: 40px;
+                            border-top: none;
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            box-shadow: none;
+                            a {
+                                height: 40px;
+                                line-height: 40px;
+                                padding: 0;
+                                color: black;
+                            }
+                            &:hover {
+                                height: 40px;
+                                border-top: none;
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                a {
+                                    padding: 0;
+                                    color: $themeColor;
+                                    font-weight: bold;
+                                    background: #eff3f5;
+                                }
+                            }
+                        }
+
+                    }
+                }
+                &:hover {
+                    &:not(.icon) {
+                        height: 66px;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+                        border-top: 4px solid $themeColor;
+                        a {
+                            margin-top: -4px;
+                            margin-bottom: 8px;
+                        }
+                    }
+                    height: auto;
+                    .li-category {
+                        display: block;
+                        ul {
+                            display: block;
+                            height: auto;
+                        }
+                    }
+                }
+
                 &.icon {
                     width: 60px;
                     img {
@@ -41,8 +110,13 @@ body {
                 }
                 &.active {
                     color: $themeColor;
-                    a:link,a:visited {
-                        color:$themeColor;
+                    a, a:link, a:visited {
+                        color: $themeColor;
+                    }
+                    &:not(.icon) {
+                        height: 66px;
+                        padding-top: 0;
+                        padding-bottom: 0;
                     }
                 }
                 &:not(.icon) {
@@ -52,14 +126,7 @@ body {
                         height: 30px;
                         padding: 16px 0 20px;
                         font-size: 14px;
-                        line-height:35px;
-                        &:hover {
-                            padding-top: 12px;
-                            padding-bottom: 24px;
-                            background-color: #fff;
-                            box-shadow: 0 0 2px rgba(0, 0, 0, .1);
-                            border-top: 4px solid $themeColor;
-                        }
+                        line-height: 35px;
                     }
                 }
 
@@ -71,13 +138,15 @@ body {
                 }
             }
         }
+
     }
 }
 
-.body{
+.body {
     min-height: 500px;
     width: 1180px;
     margin: 30px auto;
+    clear: left;
 }
 
 .footer {

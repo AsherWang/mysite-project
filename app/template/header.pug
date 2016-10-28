@@ -1,14 +1,24 @@
+- items = {"index":{href:"/",text:"首页"},"study":{isCategory:true,text:"学习"},"music":{href:"/listen2me",text:"来点音乐",out:true},"building":{href:"#",text:"建设中"},"about":{href:"/about.html",text:"关于",direction:"right"}}
+- items["study"].subItems={"translation":{text:"翻译",href:"/translation/"},"imitation":{text:"临摹",href:"/imitations/dn1.html",out:true}}
+- if(currentPage == undefined) currentPage = "index"
 .header
     .content
-        ul
+        ul.header-menu
             li.left.icon
                 a(href="/")
                     img(src="/favicon.png",alt="本应该是Logo")
-            li.left.active
-                a(href="/") 首页
-            li.left
-                a 建设中
-            //li.left
-                a 练习
-            li.right
-                a(href="/about.html") 关于
+            each val, key in items
+                - className= val.direction == "right" ? "right" : "left"
+                - if(key == currentPage)className = className + " active"
+                - if(val.isCategory)
+                    - className = className + " category"
+                    li(class=className)
+                        a=val.text
+                        .li-category
+                            ul
+                                each subVal, subKey in val.subItems
+                                    li
+                                        a(href=subVal.href target= (subVal.out ? "_blank" : "_self")) #{subVal.text}
+                - else
+                    li(class=className)
+                        a(href=val.href target=(val.out?"_blank":"_self")) #{val.text}
