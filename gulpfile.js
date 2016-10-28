@@ -10,7 +10,7 @@ var concat= require('gulp-concat');
 
 output_root='./asherwang.github.com';
 
-var pages=['common','index','pages','imitations','translations'];
+var pages=['common','index','pages','imitations','translations','comments'];
 pages.forEach(function(page){
     var output_dir=output_root+'/'+(page == 'index' ? '' : page);
     var src_page ='./app/'+page;
