@@ -1,0 +1,21 @@
+block configValues
+    - commonDir="../common"
+html
+    head
+        block title
+            title 整体布局
+        //link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css")
+        link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
+        block commonstyle
+            link(rel="stylesheet",href=commonDir+"/layout.css")
+        meta(charset="UTF-8")
+    body
+        .container
+            include ./header.pug
+            block content
+                div(style="margin:100px auto;text-align:center;height:800px;line-height:800px;")
+                    | there is nothing more.
+            include ./footer.pug
+        block scripts
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+            script(src=commonDir+"/layout.js")

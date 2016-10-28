@@ -1,7 +1,4 @@
-body{
-    width: 980px;
-    margin: 0 auto;
-}
+//调整markdown显示的样式,以及隐藏掉多说的一部分控件
 pre,pre code {
     font: 12px Consolas,"Liberation Mono", Menlo, Courier, monospace;
 }
@@ -13,10 +10,10 @@ pre{
     background-color: #f7f7f7;
     border-radius: 3px;
 }
-*{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #333;
-}
+//*{
+//    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+//    color: #333;
+//}
 hr{
     border-color: #eee;
     border-bottom: none;
@@ -24,10 +21,11 @@ hr{
 .markdown-body{
     padding: 45px;
     word-wrap: break-word;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
+    line-height: 1.5;
+    //background-color: #fff;
+    //border: 1px solid #ddd;
+    //border-bottom-right-radius: 3px;
+    //border-bottom-left-radius: 3px;
 }
 .markdown-body h1 {
     -webkit-margin-before: 0;
@@ -51,3 +49,6 @@ hr{
 .octicon {
     vertical-align: text-bottom;
 }
+
+#ds-reset p.ds-powered-by a {display:none;}
+#ds-wrapper #ds-reset .ds-dialog-footer {display:none;}

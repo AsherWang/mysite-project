@@ -1,18 +1,14 @@
 var gulp = require('gulp');
 var sass=require("gulp-sass");
-var minifyCss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var pug=require("gulp-pug");
 var coffee=require("gulp-coffee");
 var uglify = require('gulp-uglify');
-//var shell = require('gulp-shell');
+
 var concat= require('gulp-concat');
 
 
 output_root='./asherwang.github.com';
-
-
-//gulp.task('shorthand', shell.task('cd asherwang.github.com & git add . & git commit -m "gogogo" & git push origin master'));
-
 
 var pages=['common','index','pages','imitations'];
 pages.forEach(function(page){
@@ -29,7 +25,7 @@ pages.forEach(function(page){
     gulp.task(page+'-sass',function(){
         gulp.src(src_page+'/*.scss')
             .pipe(sass())
-            .pipe(minifyCss({compatibility: 'ie8'}))
+            .pipe(cleanCSS({compatibility: 'ie8'}))
             .pipe(gulp.dest(output_dir))
     }); //某page的sass
     gulp.task(page+'-coffee',function(){
@@ -44,11 +40,7 @@ pages.forEach(function(page){
     gulp.task(page,[page+'-pug',page+'-sass', page+'-coffee']); //某page的所有
 
 });
-gulp.task('libs',function(){
-    gulp.src(['./bower_components/jquery/dist/jquery.js'])
-        .pipe(uglify())
-        .pipe(gulp.dest(output_root+'/libs'));
-});
+
 
 //pages.push('libs');
-//gulp.task('run',pages);
+gulp.task('run',pages);
