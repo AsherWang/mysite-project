@@ -38,6 +38,11 @@ pages.forEach(function(page){
             .pipe(gulp.dest(output_dir));
     }); //某page的coffee
     gulp.task(page,[page+'-pug',page+'-sass', page+'-coffee']); //某page的所有
+    
+    // Rerun the task when a file changes
+    gulp.task(page+'-watch', function() {
+        gulp.watch(src_page+"/*", [page]);
+    });
 
 });
 
