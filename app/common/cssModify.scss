@@ -46,6 +46,13 @@ hr{
     line-height: 1.25;
     padding-bottom: 0.3em;
 }
+.markdown-body{
+    blockquote{
+        background-color: #e5e5e5;
+        padding: 2px 20px;
+    }
+}
+
 #readme h3.heading{
     display: block;
     padding: 9px 10px 10px;
@@ -60,6 +67,8 @@ hr{
 .octicon {
     vertical-align: text-bottom;
 }
+
+
 
 #ds-reset p.ds-powered-by a {display:none;}
 #ds-wrapper #ds-reset .ds-dialog-footer {display:none;}
